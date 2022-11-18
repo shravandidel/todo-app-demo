@@ -86,10 +86,7 @@ function ToDoApp() {
     // setTodos(newTodos);
     // setOpen(true);
     setOpen2(true)
-   
     setNewVariable(index)
-    
-    
   };
 
   const handleEditSubmit=(id)=>{
