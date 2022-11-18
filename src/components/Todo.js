@@ -75,8 +75,6 @@ function ToDoApp() {
   };
 
   const handleEditSubmit=(id)=>{
-    const clickedTodo = toDos.filter((todo) => todo.id === id);
-   
     toDos[newVariable].value=value2
     toDos[newVariable].modifiedTime=hourAndMin
     setOpen2(false)
@@ -161,7 +159,6 @@ function ToDoApp() {
             </Button>
 
           </DialogContent>
-          {/* </form> */}
         </Dialog>
       </Box>
 
