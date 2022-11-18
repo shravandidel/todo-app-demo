@@ -29,12 +29,6 @@ function ToDoApp() {
   const hours =date.getHours()
   const minutes=date.getMinutes()
   const hourAndMin=`${hours}:${minutes}`
-
-
-
-  
-
-
   const handleOpen = () => {
     setOpen(true);
   };
@@ -64,27 +58,18 @@ function ToDoApp() {
   const handleCompleted = (id) => {
     const newTodos = toDos.filter((todo) => todo.id !== id);
     const clickedTodo = toDos.filter((todo) => id === todo.id);
-   
-
     const returnedClickedTodo=clickedTodo.map((todo)=>Object.assign(todo,{completedTime:hourAndMin}))
-    
-    
+   
     setCompleted([...completed,...clickedTodo]);
     setTodos(newTodos);
+  
   };
 
   const handleEdit = (id,index) => {
+  const clickedTodo = toDos.filter((todo) => todo.id === id);
     
-   const clickedTodo = toDos.filter((todo) => todo.id === id);
-   // const returnedClickedTodo=clickedTodo.map((todo)=>Object.assign(todo,{modifiedTime:hourAndMin}))
-    
-     
-
-    // console.log(clickedTodo)
     const oldValue=clickedTodo.map(todo=>todo.value)
     setValue2(oldValue);
-    // setTodos(newTodos);
-    // setOpen(true);
     setOpen2(true)
     setNewVariable(index)
   };
@@ -97,8 +82,8 @@ function ToDoApp() {
     setOpen2(false)
     setValue('')
     setValue2('')
-  
   }
+  
   const handleEditClose =()=>{
     setOpen2(false)
     setValue('')
@@ -120,9 +105,6 @@ function ToDoApp() {
       handleEditSubmit(id)
      }
   }
-
-
-
 
   return (
     <Box>
